@@ -63,30 +63,34 @@ const Home = () => {
         <>
             <Navbar />
             <div className="bg-gradient-to-t from-white to-[rgb(180,215,228)]">
-            <main >
+                <main >
                     <one-section >
-                        <div
-                            className=" bg-cover bg-center h-[400px] sm:h-[500px] md:h-[600px] lg:h-[600px] mx-0 px-0 flex flex-col items-center justify-center w-full"
-                        >
+                        <div className="w-full mx-0 px-0 flex flex-col items-center justify-center">
                             <div className="w-[100%]" >
                                 <Slider {...settings}>
                                     <div>
-                                        <img src={banner_1} alt="Slide 1" className="w-full h-[600px] bg-cover rounded-lg" />
+                                        <img src={banner_1} alt="Slide 1" className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[600px] object-cover rounded-lg"
+                                        />
                                     </div>
                                     <div>
-                                        <img src={car5} alt="Slide 2" className="w-full h-[600px] bg-cover rounded-lg" />
+                                        <img src={car5} alt="Slide 2" className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[600px] object-cover rounded-lg"
+                                        />
                                     </div>
                                     <div>
-                                        <img src={car6} alt="Slide 3" className="w-full h-[600px] bg-cover rounded-lg" />
+                                        <img src={car6} alt="Slide 3" className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[600px] object-cover rounded-lg"
+                                        />
                                     </div>
                                     <div>
-                                        <img src={banner_4} alt="Slide 4" className="w-full h-[600px] bg-cover rounded-lg" />
+                                        <img src={banner_4} alt="Slide 4" className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[600px] object-cover rounded-lg"
+                                        />
                                     </div>
                                     <div>
-                                        <img src={car7} alt="Slide 5" className="w-full h-[600px] bg-cover rounded-lg" />
+                                        <img src={car7} alt="Slide 5" className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[600px] object-cover rounded-lg"
+                                        />
                                     </div>
                                     <div>
-                                        <img src={car8} alt="Slide 6" className="w-full h-[600px] bg-cover rounded-lg" />
+                                        <img src={car8} alt="Slide 6" className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[600px] object-cover rounded-lg"
+                                        />
                                     </div>
 
                                 </Slider>
