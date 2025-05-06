@@ -65,7 +65,7 @@ const Home = () => {
             <div className="bg-gradient-to-t from-white to-[rgb(180,215,228)]">
             <main >
                     <one-section >
-                        {/* <div
+                        <div
                             className=" bg-cover bg-center h-[400px] sm:h-[500px] md:h-[600px] lg:h-[600px] mx-0 px-0 flex flex-col items-center justify-center w-full"
                         >
                             <div className="w-[100%]" >
@@ -91,7 +91,7 @@ const Home = () => {
 
                                 </Slider>
                             </div>
-                        </div> */}
+                        </div>
                     </one-section>
 
                     <two-section> <div className="w-full mt-5 mb-5 flex justify-around">

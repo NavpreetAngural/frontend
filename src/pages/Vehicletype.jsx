@@ -28,7 +28,7 @@ const Vehicletype = () => {
         {vehicles.map(v => (
           <div key={v._id} className="bg-white rounded-lg !pb-3 shadow-xl transform hover:scale-105 transition-transform duration-300 ease-in-out overflow-hidden ">
             <img
-              src={`http://localhost:3000/uploads/${v.vehicleImage}`}
+             src={`https://drive-dash-backend.onrender.com/api/uploads/${v.vehicleImage}`}
               alt={v.vehicleName}
               className="w-full h-48 object-cover rounded-t-lg"
             />
