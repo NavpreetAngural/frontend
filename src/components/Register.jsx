@@ -19,7 +19,7 @@ const Register = () => {
     const onFinish = (values) => {
         console.log("Received values of form: ", values);
 
-        axios.post(`${baseURL}/api/auth/register`, values)
+        axios.post(`${baseURL}/auth/register`, values)
             .then((response) => {
                 if (response.status === 200) {
                     toast.success(response.data.message)
