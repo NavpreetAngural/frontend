@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+html {
+  @apply overflow-x-hidden  items-center;
+}
+
+* {
+  @apply box-border m-0 p-0 ;
+}
+
+.navbar {
+  @apply flex justify-between items-center  px-10 shadow-lg ;
+}
+
+#nav_page {
+  @apply w-full h-[50px] bg-[linear-gradient(to-bottom,white,rgb(180,215,228))] relative;
+}
+
+.nav-links {
+  @apply absolute md:static  bg-white  md:bg-transparent w-full  md:w-auto left-0 top-16 md:top-0 px-10 md:px-0 transition-all duration-300 ease-in-out hidden md:flex gap-8 items-center;
+}
+
+.nav-links li a {
+  @apply no-underline text-black text-lg font-extrabold  p-[6px] font-sans;
+}
+
+.nav-links li ,  .active {
+  @apply no-underline text-black text-lg font-semibold p-[6px] font-sans;
+}
+
+.nav-links li a:hover {
+  @apply bg-blue-600 text-white rounded-md shadow-lg;
+}
+
+#p1 {
+  @apply relative text-4xl font-bold text-[rgb(138,138,188)] left-[30%] top-[70%] tracking-wider font-sans;
+}
+
+#h1_1 {
+  @apply text-center relative text-[rgb(72,61,61)] top-[40px] text-2xl;
+}
+
+input:hover, button:hover {
+  @apply text-black;
+}
+
+span a, a {
+  @apply no-underline;
+}
+
+span a:hover {
+  @apply text-red-500;
+}
+
+.container {
+  @apply flex flex-wrap justify-around gap-8 h-auto;
+}
+
+.container img {
+  @apply h-[250px] w-[250px] rounded-lg;
+}
+
+.divs, .divss {
+  @apply w-[200px] h-auto shadow-lg bg-[rgb(180,215,228)] pb-2 rounded-lg hover:shadow-xl hover:scale-110 transition-transform duration-300;
+}
+
+.divs:hover, .divss:hover {
+  @apply transition-all duration-300 scale-105 shadow-[8px_4px_15px_rgba(0,0,0,0.5)];
+}
+
+button {
+  @apply bg-gray-400 w-[120px] h-[35px] text-black rounded-md mt-3 md:mt-0 hover:bg-gray-500;
+}
+
+.container-2, .container-3 {
+  @apply w-full flex flex-wrap justify-around gap-4 p-4;
+}
+
+.left-section, .right-section {
+  @apply w-full md:w-[48%] text-center shadow-xl border border-black bg-[linear-gradient(white,rgb(180,215,228))] p-6 rounded-[80px];
+}
+
+.left-section ul p, .right-section ul p, label {
+  @apply text-xl;
+}
+
+.checked {
+  @apply text-orange-600;
+}
+
+.ant-modal-wrap {
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.15) !important;
+}
+
+.foot {
+  @apply w-full flex flex-wrap gap-[40px] justify-around  pb-[40px];
+}
+
+.foot-links {
+  @apply w-3/4 flex justify-around list-none flex-wrap gap-[40px] p-3 shadow-lg rounded-[25px];
+}
+
+.foot-links li a {
+  @apply no-underline text-[24px] text-black font-bold hover:text-blue-600;
+}
+
+.login_form, .signup_form {
+  @apply border flex flex-wrap justify-center items-center flex-col bg-[rgb(180,215,228)] shadow-lg rounded-[35px] border-solid border-black p-6;
+}
+
+input {
+  @apply border border-solid border-black rounded-lg px-3 py-2;
+}
+
+
