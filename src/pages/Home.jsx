@@ -133,7 +133,7 @@ const Home = () => {
                                         viewport={{ amount: 0.2 }}
                                         custom={index} // Pass index for staggered effect
                                     >
-                                        <img src={`${process.env.REACT_APP_API_URL}/uploads/${vehicle.vehicleImage}`}  alt="Vehicle" className="h-[150px] w-[150px] rounded-md" />
+                                        <img src={`https://drive-dash-backend.onrender.com/api/uploads/${vehicle.vehicleImage}`} alt="Vehicle" className="h-[150px] w-[150px] rounded-md" />
                                         <h3 className="text-lg font-semibold mt-2">{vehicle.vehicleName}</h3>
                                         <h3 className="text-lg">{vehicle.rentPerDay} rs.</h3>
                                         <button className="bg-gray-300 w-[100px] h-[30px] text-black rounded-lg mt-2 hover:bg-gray-400 transition-all">
