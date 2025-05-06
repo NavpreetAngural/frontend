@@ -11,7 +11,6 @@ import { NavLink } from "react-router";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../index.css"
@@ -39,14 +38,6 @@ const Home = () => {
         autoplaySpeed: 3000,
     };
 
-    const blockVariants = {
-        hidden: { opacity: 0, x: -50 },
-        visible: (index) => ({
-            opacity: 1,
-            x: 0,
-            transition: { delay: index * 0.2, duration: 0.3 } // Delay each block by 0.2s
-        })
-    };
     const viewVehicles = async () => {
         try {
             const response = await axios.get(`${baseURL}/vehicle/view`)
