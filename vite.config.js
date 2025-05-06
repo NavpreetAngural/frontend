@@ -9,7 +9,7 @@ export default defineConfig({
     tailwindcss()
   ],
   build: {
-    outDir: 'build', // 👈 This changes the output folder from 'dist' to 'build'
+    outDir: 'dist', // ✅ Changed from 'build' to 'dist' for Netlify compatibility
     rollupOptions: {
       output: {
         manualChunks: {
@@ -17,7 +17,6 @@ export default defineConfig({
           antd: ['antd'],
           axios: ['axios']
         }
-
       }
     }
   }
