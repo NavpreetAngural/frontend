@@ -115,11 +115,8 @@ const Home = () => {
                             </center>
                         </div>
                     </div>
-                        <motion.div
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            initial={{ opacity: 0, scale: 0.5 }}
-                            transition={{ duration: 0.5 }}
-                            viewport={{ amount: 0.2 }}
+                        <div
+                            
                             className="flex items-center justify-center rounded-lg container w-full px-5 mt-5"
                         >
                             {/* Title Section */}
@@ -128,14 +125,8 @@ const Home = () => {
                             {/* Vehicles Grid with Individual Animation */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 mt-6 pt-5 justify-around">
                                 {vehicles.map((vehicle, index) => (
-                                    <motion.div
-                                        key={index}
+                                    <div
                                         className="divs flex flex-col items-center p-4"
-                                        variants={blockVariants}
-                                        initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{ amount: 0.2 }}
-                                        custom={index} // Pass index for staggered effect
                                     >
                                         <img src={`https://drive-dash-backend.onrender.com/api/uploads/${vehicle.vehicleImage}`} alt="Vehicle" className="h-[150px] w-[150px] rounded-md" />
                                         <h3 className="text-lg font-semibold mt-2">{vehicle.vehicleName}</h3>
@@ -143,19 +134,16 @@ const Home = () => {
                                         <button className="bg-gray-300 w-[100px] h-[30px] text-black rounded-lg mt-2 hover:bg-gray-400 transition-all">
                                             <NavLink to="/addbooking"> Add Booking</NavLink>
                                         </button>
-                                    </motion.div>
+                                    </div>
                                 ))}
                             </div>
-                        </motion.div>;
+                        </div>;
 
                     </two-section>
 
                     <third-section>
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.5 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.5 }}
-                            viewport={{ amount: 0.2 }} // Ensures animation starts when 20% of section is visible
+                        <div
+                            
                             className="container-2"
                         >
                             <div style={{ width: "100%", padding: 25 }}>
@@ -259,7 +247,7 @@ const Home = () => {
                                     <br />
                                 </ul>
                             </div>
-                        </motion.div>
+                        </div>
                     </third-section>
                     <forth-section>
                         <div className="container">
