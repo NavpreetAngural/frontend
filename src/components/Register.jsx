@@ -11,6 +11,7 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router';
 import { useGoogleLogin } from '@react-oauth/google';
 import "../index.css"
+import { baseURL } from '../../config';
 
 const Register = () => {
     const navigate = useNavigate()
@@ -40,7 +41,7 @@ const Register = () => {
         console.log("Google Auth Response:", authResult);
         try {
             if (authResult.code) {
-                const res = await axios.post(`http://localhost:3000/api/auth/google?code=${authResult.code}`);
+                const res = await axios.post(`${baseURL}/auth/google?code=${authResult.code}`);
                 console.log("Response from backend:", res);
                 const { email, name, image } = res.data.user;
                 const token = res.data.token;
