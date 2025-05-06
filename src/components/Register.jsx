@@ -19,7 +19,7 @@ const Register = () => {
     const onFinish = (values) => {
         console.log("Received values of form: ", values);
 
-        axios.post("http://localhost:3000/api/auth/register", values)
+        axios.post(`${baseURL}/api/auth/register`, values)
             .then((response) => {
                 if (response.status === 200) {
                     toast.success(response.data.message)
@@ -41,7 +41,7 @@ const Register = () => {
         console.log("Google Auth Response:", authResult);
         try {
             if (authResult.code) {
-                const res = await axios.post(`${baseURL}/auth/google?code=${authResult.code}`);
+                const res = await axios.post(`http://localhost:3000/api/auth/google?code=${authResult.code}`);
                 console.log("Response from backend:", res);
                 const { email, name, image } = res.data.user;
                 const token = res.data.token;
