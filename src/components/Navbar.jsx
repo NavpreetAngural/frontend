@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Modal } from 'antd';
-import { NavLink ,useNavigate} from 'react-router'; 
+import { Button, Modal, Input } from 'antd'; // ✅ Import Input
+import { NavLink, useNavigate } from 'react-router';
 import logo from "../assets/images/logo.png";
 import "../index.css";
 import Login from './Login';
@@ -10,43 +10,68 @@ const Navbar = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isLogin, setIsLogin] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const navigate = useNavigate(); // 
+    const navigate = useNavigate();
 
     const showModal = () => setIsModalOpen(true);
     const handleCancel = () => setIsModalOpen(false);
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     const handleLoginSuccess = () => {
-        setIsModalOpen(false);     
-        navigate('/');              
+        setIsModalOpen(false);
+        navigate('/');
     };
 
     return (
         <header id="head">
-            <nav className="navbar flex justify-between items-center shadow-md bg-white ">
+            <nav className="navbar flex flex-wrap justify-between items-center shadow-md bg-white px-4 py-2 gap-4 !mx-[30]">
+                {/* Logo */}
                 <NavLink to="/">
                     <img src={logo} alt="Logo" className="h-20 w-60" />
                 </NavLink>
 
-                {/* Hamburger Menu Button */}
+                {/* ✅ Search Bar */}
+                {/* Search - input for desktop, icon for mobile */}
+                <div className="flex-grow">
+                    {/* Desktop: sleek AntD search bar */}
+                    <div className="hidden md:block ">
+                        <Input.Search
+                            placeholder="Search vehicles..."
+                            onSearch={(value) => console.log('Search:', value)}
+                            allowClear
+                            size="large"
+                            bordered={false}
+                            className="w-full max-w-md rounded-xl shadow-md focus:shadow-lg transition duration-300"
+                        />
+                    </div>
+
+                    {/* Mobile: search icon only */}
+                    <div
+                        className="block md:hidden text-2xl text-gray-700 cursor-pointer hover:text-blue-600 !ml-4"
+                        onClick={() => console.log('Mobile search icon clicked')}
+                    >
+                        🔍
+                    </div>
+                </div>
+
+
+
+                {/* Hamburger Button */}
                 <button className="md:hidden text-2xl p-2 focus:outline-none" onClick={toggleMenu}>
                     {isMenuOpen ? '✖' : '☰'}
                 </button>
 
-                {/* Mobile Navigation Overlay */}
+                {/* Overlay */}
                 {isMenuOpen && (
                     <div className="fixed top-0 left-0 w-full h-full bg-opacity-50 z-40" onClick={toggleMenu}></div>
                 )}
 
-                {/* Navigation Links */}
+                {/* Nav Links */}
                 <ul className={`fixed md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none flex flex-col md:flex-row gap-4 md:gap-10 items-center 
                     transition-all duration-300 ease-in-out z-50
                     ${isMenuOpen ? 'block' : 'hidden md:flex'}`}>
 
                     <li className="py-2 md:py-0 text-lg"><NavLink to="/" className="hover:text-blue-500">Home</NavLink></li>
                     <li className="py-2 md:py-0 text-lg"><NavLink to="/vehiclecategory" className="hover:text-blue-500">Vehicles</NavLink></li>
-                    {/* <li className="py-2 md:py-0 text-lg"><NavLink to="/addvehicle" className="hover:text-blue-500">Add Vehicle</NavLink></li> */}
-                    <li className="py-2 md:py-0 text-lg"><NavLink to="/Addbooking" className="hover:text-blue-500">Add Booking</NavLink></li> 
                     <li className="py-2 md:py-0 text-lg"><NavLink to="/about" className="hover:text-blue-500">About Us</NavLink></li>
                     <li className="py-2 md:py-0 text-lg"><NavLink to="/contact" className="hover:text-blue-500">Contact Us</NavLink></li>
 
@@ -54,7 +79,7 @@ const Navbar = () => {
                 </ul>
             </nav>
 
-            {/* Login/Signup Modal */}
+            {/* Modal */}
             <Modal
                 className='text-xl backdrop-blur-md bg-opacity-30'
                 width={500}
@@ -66,7 +91,7 @@ const Navbar = () => {
                     {isLogin ? (
                         <>
                             <h2 className="text-2xl font-bold mb-5">Login</h2>
-                            <Login onSuccess={handleLoginSuccess} /> {/* ✅ pass callback */}
+                            <Login onSuccess={handleLoginSuccess} />
                             <p className="mt-4 text-sm">
                                 Don't have an account? <button onClick={() => setIsLogin(false)} className="text-blue-500 font-semibold">Sign up</button>
                             </p>
@@ -74,7 +99,7 @@ const Navbar = () => {
                     ) : (
                         <>
                             <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
-                            <Register onRegisterSuccess={() => setIsLogin(true)}/>
+                            <Register onRegisterSuccess={() => setIsLogin(true)} />
                             <p className="mt-4 text-sm">
                                 Already have an account? <button onClick={() => setIsLogin(true)} className="text-green-500 font-semibold">Login</button>
                             </p>

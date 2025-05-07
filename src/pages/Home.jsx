@@ -53,7 +53,7 @@ const Home = () => {
 
         <>
             <Navbar />
-            <div className="bg-gradient-to-t from-white to-[rgb(180,215,228)]">
+            <div className=" !mx-30 ">
                 <main >
                     <one-section >
                         <div className="w-full mx-0 px-0 flex flex-col items-center justify-center">
@@ -107,19 +107,19 @@ const Home = () => {
                         </div>
                     </div>
                         <div
-                            
-                            className="flex items-center justify-center rounded-lg container w-full px-5 mt-5"
+
+                            className="flex rounded-lg  justify-center"
                         >
                             {/* Title Section */}
 
 
                             {/* Vehicles Grid with Individual Animation */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 mt-6 pt-5 justify-around">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-16 ">
                                 {vehicles.map((vehicle, index) => (
                                     <div
-                                        className="divs flex flex-col items-center p-4"
+                                        className="divs flex flex-col items-center "
                                     >
-                                        <img src={`https://drive-dash-backend.onrender.com/api/uploads/${vehicle.vehicleImage}`} alt="Vehicle" className="h-[150px] w-[150px] rounded-md" />
+                                        <img src={`https://drive-dash-backend.onrender.com/api/uploads/${vehicle.vehicleImage}`} alt="Vehicle" className="w-full h-[50px] sm:h-[100px] md:h-[150px] lg:h-[200px]  rounded-lg" />
                                         <h3 className="text-lg font-semibold mt-2">{vehicle.vehicleName}</h3>
                                         <h3 className="text-lg">{vehicle.rentPerDay} rs.</h3>
                                         <button className="bg-gray-300 w-[100px] h-[30px] text-black rounded-lg mt-2 hover:bg-gray-400 transition-all">
@@ -128,13 +128,13 @@ const Home = () => {
                                     </div>
                                 ))}
                             </div>
-                        </div>;
+                        </div>
 
                     </two-section>
 
                     <third-section>
                         <div
-                            
+
                             className="container-2"
                         >
                             <div style={{ width: "100%", padding: 25 }}>
@@ -257,30 +257,6 @@ const Home = () => {
                                     </h1>
                                 </center>
                             </div>
-                            {/* <div className="divss">
-                                <img src={men_1} alt="men" />
-                                <center>
-                                    <h3> John </h3>
-                                    <h3> Rating : 5/5 </h3>
-                                    <span className="fa fa-star checked" />
-                                    <span className="fa fa-star checked" />
-                                    <span className="fa fa-star checked" />
-                                    <span className="fa fa-star checked" />
-                                    <span className="fa fa-star checked" />
-                                </center>
-                            </div>
-                            <div className="divss">
-                                <img src={men_3} alt="men" />
-                                <center>
-                                    <h3> John </h3>
-                                    <h3> Rating : 4/5 </h3>
-                                    <span className="fa fa-star checked" />
-                                    <span className="fa fa-star checked" />
-                                    <span className="fa fa-star checked" />
-                                    <span className="fa fa-star checked" />
-                                    <span className="fa fa-star " />
-                                </center>
-                            </div> */}
                             <div className="divss">
                                 <img src={men_1} alt="men" />
                                 <center>
@@ -349,17 +325,12 @@ const Home = () => {
                                 </center>
                             </div>
                             <div style={{ width: "75%", alignItems: "center" }}>
-                                <img
-                                    src={foot_banner}
-                                    width="100%"
-                                    style={{ borderRadius: 50, boxShadow: "5px 5px 5px black", height: "500px" }}
-                                />
+                                <img src={foot_banner} className="w-full h-auto rounded-2xl shadow-xl object-cover max-h-[500px]" />
                             </div>
                             <div style={{ width: "100%" }}>
                                 <center>
                                     <NavLink to="/">
-                                        <button style={{ width: "10%", boxShadow: "3px 3px 3px" }}>
-                                            {" "}
+                                        <button className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600">
                                             Sign Up
                                         </button>
                                     </NavLink>

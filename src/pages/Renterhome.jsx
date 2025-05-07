@@ -7,7 +7,7 @@ const RenterHome = () => {
   const role = localStorage.getItem('role');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-yellow-100 !px-8 !py-12 flex justify-center">
+    <div className="min-h-screen  !py-12 flex justify-center  !mx-30">
       <div className="max-w-7xl w-full">
         {/* Welcome Banner */}
         <div className="bg-white/70 backdrop-blur-md rounded-3xl !p-10 text-center shadow-xl !mb-16">

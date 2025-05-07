@@ -29,7 +29,7 @@ const Contact = () => {
     return (
         <>
             <Navbar />
-            <div className="bg-repeat bg-[length:140%_100%]  bg-fixed"
+            <div className="bg-repeat bg-[length:140%_100%]  bg-fixed  !mx-30" 
                 style={{ backgroundImage: `url(${contact})` }}>
 
                 <main style={{ backgroundColor: 'aliceblue', width: '60%', marginLeft: '40%', height: "auto" }}>

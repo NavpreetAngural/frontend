@@ -1,113 +1,80 @@
-import React from 'react'
-import "../index.css"
-import { NavLink } from 'react-router'
-import "../index.css"
+import React from 'react';
+import { NavLink } from 'react-router';
+import '../index.css';
+
 const Footer = () => {
     return (
-        <div>
-            <footer className="foot">
-                {/* <div style={{ width: "100%", marginTop: 20 }}>
-                    <center>
-                        <h1
-                            style={{
-                                display: "inline",
-                                boxShadow: "1px 1px 1px",
-                                padding: 8,
-                                backgroundImage: "radial-gradient(white , rgb(180, 215, 228))",
-                                borderRadius: 10
-                            }}
-                        >
-                            Links
-                        </h1>
-                    </center>
-                </div> */}
-                <ul className="foot-links">
-                    <li className="li">
-                        <NavLink to="/vehicles">Vehicles</NavLink>
-                    </li>
-                    <li className="li">
-                        <NavLink to="/bookings">Bookings</NavLink>
-                    </li>
-                    <li className="li">
-                        <NavLink to="/aboutUs">About Us</NavLink>
-                    </li>
-                    <li className="li">
-                        <NavLink to="/contactUs">Contact Us</NavLink>
-                    </li>
-                    <li className="li">
-                        <NavLink to="/login">Login</NavLink>
-                    </li>
-                </ul>
-                <div
-                    style={{
-                        width: "100%",
-                        display: "flex",
-                        flexWrap: "nowrap",
-                        alignItems: "center",
-                        justifyContent: "space-around"
-                    }}
-                >
-                    <div style={{ width: "50%" }}>
-                        <center>
-                            <h2>Social Media Links : </h2>
-                            <br />
-                            <i className="fa-brands fa-facebook" />
-                            <NavLink to="https://www.facebook.com/" target="blank">
-                                www.facebook.com
-                            </NavLink>
-                            <br />
-                            <br />
-                            <i className="fa-brands fa-twitter" />
-                            <NavLink to="https://twitter.com/" target="_blank">
-                                www.twitter.com
-                            </NavLink>
-                            <br />
-                            <br />
-                            <i className="fa-brands fa-instagram" />
-                            <NavLink to="https://instagram.com/" target="_blank">
-                                www.instagram.com
-                            </NavLink>
-                            <br />
-                            <br />
-                            <i className="fa-brands fa-youtube" />
-                            <NavLink to="https://youtube.com/" target="_blank">
-                                www.youtube.com
-                            </NavLink>
-                            <br />
-                            <br />
-                        </center>
-                    </div>
-                    <div style={{ width: "50%" }}>
-                        <center>
-                            <h2> Contact Info : </h2>
-                            <br />
-                            <br />
-                            <p>
-                                <i className="fa-solid fa-envelope" />
-                                <NavLink to="mailto:drivedash@gmail.com"> drivedash@gmail.com</NavLink>
-                            </p>
-                            <br />
-                            <p>
-                                <i className="fa-solid fa-phone" />
-                                <NavLink to="phoneto:+91998876655"> +91998876655</NavLink>
-                            </p>
-                            <p style={{padding : "30px"}}>Have questions?
-                                <NavLink to="/contact"> Contact us </NavLink>
-                                —we’re here to help!</p>
-                            <br />
-                        </center>
-                    </div>
-                </div>
-                <div style={{ width: "100%" }}>
-                    <center>
-                        <h6>
-                            <u>Made by : Navpreet</u>{" "}
-                        </h6>
-                    </center>
-                </div>
-            </footer>
-        </div>
-    )
-}
+        <footer className="bg-gray-800 text-white !py-10 !px-5 !mt-10">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between !gap-11">
 
-export default Footer
+                {/* Social Media Links */}
+                <div className="flex-1 text-center">
+                    <h2 className="text-xl font-semibold !mb-4">Social Media</h2>
+                    <ul className="flex flex-col items-center !gap-y-3">
+                        <li>
+                            <i className="fa-brands fa-facebook mr-2" />
+                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                facebook.com
+                            </a>
+                        </li>
+                        <li>
+                            <i className="fa-brands fa-twitter mr-2" />
+                            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                twitter.com
+                            </a>
+                        </li>
+                        <li>
+                            <i className="fa-brands fa-instagram mr-2" />
+                            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                instagram.com
+                            </a>
+                        </li>
+                        <li>
+                            <i className="fa-brands fa-youtube mr-2" />
+                            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                youtube.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                {/* Internal Links */}
+                <div className="flex-1 text-center">
+                    <h2 className="text-xl font-semibold !mb-4">Quick Links</h2>
+                    <ul className="flex flex-col items-center !gap-y-3">
+                        <li><NavLink to="/vehicles" className="hover:underline">Vehicles</NavLink></li>
+                        <li><NavLink to="/bookings" className="hover:underline">Bookings</NavLink></li>
+                        <li><NavLink to="/aboutUs" className="hover:underline">About Us</NavLink></li>
+                        <li><NavLink to="/contactUs" className="hover:underline">Contact Us</NavLink></li>
+                        <li><NavLink to="/login" className="hover:underline">Login</NavLink></li>
+                    </ul>
+                </div>
+
+                {/* Contact Info */}
+                <div className="flex-1 text-center">
+                    <h2 className="text-xl font-semibold !mb-4">Contact Info</h2>
+                    <ul className="flex flex-col items-center !gap-y-3">
+                        <li>
+                            <i className="fa-solid fa-envelope mr-2" />
+                            <a href="mailto:drivedash@gmail.com" className="hover:underline">drivedash@gmail.com</a>
+                        </li>
+                        <li>
+                            <i className="fa-solid fa-phone mr-2" />
+                            <a href="tel:+91998876655" className="hover:underline">+91 99887 6655</a>
+                        </li>
+                        <li>
+                            Have questions? <NavLink to="/contact" className="text-blue-400 hover:underline">Contact us</NavLink> — we’re here to help!
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            {/* Footer Bottom */}
+            <div className="text-center !mt-10 border-t border-gray-600 !pt-4 text-sm">
+                <p>&copy; {new Date().getFullYear()} Made by <span className="underline">Navpreet</span></p>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;

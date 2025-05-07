@@ -8,7 +8,7 @@ const About = () => {
   return (
     <>
       <Navbar />
-      <div style={{ display: "flex", width: "100%", height: "100%", justifyContent: "space-evenly", flexWrap: "wrap", backgroundColor: "lightblue" }}>
+      <div style={{ display: "flex", height: "100%", justifyContent: "space-evenly", flexWrap: "wrap" }} className=' !mx-30'>
         <div style={{ width: "48%", display: "flex", flexWrap: "wrap", rowGap: "20px", paddingTop: "20px" }}>
           <div style={{ width: "100%", backgroundColor: "white", borderRadius: "10px", padding: "30px", height: "200px" }}>
             <center><h1 style={{ color: "black", fontSize: "1.5rem", fontWeight: "bold" }}>Company Overview</h1>

@@ -23,7 +23,7 @@ const Renternavbar = () => {
     };
     return (
         <header id="head">
-            <nav className="navbar flex justify-between items-center shadow-md bg-white ">
+            <nav className="navbar flex justify-between items-center  bg-white ">
                 <NavLink to="/">
                     <img src={logo} alt="Logo" className="h-20 w-55" />
                 </NavLink>

@@ -9,7 +9,7 @@ html {
 }
 
 .navbar {
-  @apply flex justify-between items-center  px-10 shadow-lg ;
+  @apply flex justify-between items-center !mx-30   ;
 }
 
 #nav_page {
@@ -98,7 +98,7 @@ button {
 }
 
 .foot-links {
-  @apply w-3/4 flex justify-around list-none flex-wrap gap-[40px] p-3 shadow-lg rounded-[25px];
+  @apply w-3/4  list-none  gap-[40px] p-3 shadow-lg rounded-[25px];
 }
 
 .foot-links li a {

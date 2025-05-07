@@ -262,7 +262,7 @@ const Viewbookings = () => {
         </Form>
       </Modal>
 
-      <Table columns={columns} dataSource={bookings} rowKey="_id" />
+      <Table columns={columns} dataSource={bookings} rowKey="_id" className='!mx-30'/>
     </>
   );
 };

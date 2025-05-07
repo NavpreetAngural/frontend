@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import {
   Typography,
-  Table,
   Button,
   Modal,
   Form,
   Input,
   Select,
-  DatePicker
+  DatePicker,
+  Card, Col, Row,
+  Tag
 } from 'antd';
-import axios from 'axios';
 import axiosinstance from '../../axiosinstance';
 import { baseURL } from '../../config';
 import { MdDelete, MdEdit } from 'react-icons/md';
@@ -45,7 +45,7 @@ const Mybookings = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${baseURL}/booking/delete/${id}`);
+      await axiosinstance.delete(`${baseURL}/booking/delete/${id}`);
       setBookings((prev) => prev.filter((item) => item._id !== id));
       toast.success('Booking deleted successfully');
     } catch (error) {
@@ -55,15 +55,15 @@ const Mybookings = () => {
 
   const handleEdit = (booking) => {
     setIsModalOpen(true);
-  setEditingUserId(booking._id);
-  setIsModifiedVehicle(booking.vehicleType === 'Modified Vehicle');
-  form.setFieldsValue(booking);
+    setEditingUserId(booking._id);
+    setIsModifiedVehicle(booking.vehicleType === 'Modified Vehicle');
+    form.setFieldsValue(booking);
 
-  form.setFieldsValue({
-    ...booking,
-    pickupDate: booking.pickupDate ? dayjs(booking.pickupDate) : null,
-    dropDate: booking.dropDate ? dayjs(booking.dropDate) : null
-  });
+    form.setFieldsValue({
+      ...booking,
+      pickupDate: booking.pickupDate ? dayjs(booking.pickupDate) : null,
+      dropDate: booking.dropDate ? dayjs(booking.dropDate) : null
+    });
   };
 
   const showModal = () => {
@@ -76,7 +76,7 @@ const Mybookings = () => {
   const onFinish = async (values) => {
     try {
       if (editingUserId) {
-        await axios.put(`${baseURL}/booking/update/${editingUserId}`, values);
+        await axiosinstance.put(`${baseURL}/booking/update/${editingUserId}`, values);
         toast.success('Booking updated successfully');
       } else {
         const response = await axios.post(`${baseURL}/booking/add`, values);
@@ -155,9 +155,9 @@ const Mybookings = () => {
 
   return (
     <>
-      <div className="flex items-center mb-4">
+      <div className="flex items-center mb-4 !mx-30'">
         <Title className='text-center !ml-160 !my-10'>MyBookings</Title>
-        <Button type="primary" className='!ml-130' onClick={showModal}>
+        <Button type="primary" className='!ml-100' onClick={showModal}>
           Add Booking
         </Button>
       </div>
@@ -268,7 +268,51 @@ const Mybookings = () => {
         </Form>
       </Modal>
 
-      <Table columns={columns} dataSource={bookings} rowKey="_id" />
+      <Row gutter={[16, 16]} className='!mx-[30]'>
+        {bookings.map((booking) => (
+          <Col xs={24} sm={12} md={8} lg={8} key={booking._id}>
+            <Card
+              className='!mx-[30]'
+              title={booking.vehicleType}
+              bordered={false}
+              style={{
+                borderRadius: '10px',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+              }}
+              extra={
+                <div className="flex gap-3 !mx-[30]">
+                  <MdEdit
+                    className="text-blue-600 cursor-pointer"
+                    size={20}
+                    onClick={() => handleEdit(booking)}
+                  />
+                  <MdDelete
+                    className="text-red-600 cursor-pointer"
+                    size={20}
+                    onClick={() => handleDelete(booking._id)}
+                  />
+                </div>
+              }
+            >
+              <p><strong>Full Name:</strong> {booking.fullname}</p>
+              <p><strong>Email:</strong> {booking.email}</p>
+              <p><strong>Phone:</strong> {booking.mobile}</p>
+              <p><strong>License No:</strong> {booking.licenseNo}</p>
+              {booking.vehicleType === 'Modified Vehicle' && (
+                <p><strong>Modifications:</strong> {booking.modificationDetails || 'N/A'}</p>
+              )}
+              <p>
+                <strong>Pickup:</strong>{' '}
+                <Tag color="green">{dayjs(booking.pickupDate).format('DD-MM-YYYY')}</Tag>
+              </p>
+              <p>
+                <strong>Drop:</strong>{' '}
+                <Tag color="volcano">{dayjs(booking.dropDate).format('DD-MM-YYYY')}</Tag>
+              </p>
+            </Card>
+          </Col>
+        ))}
+      </Row>
     </>
   );
 };
