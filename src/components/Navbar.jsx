@@ -23,7 +23,7 @@ const Navbar = () => {
 
     return (
         <header id="head">
-            <nav className="navbar flex flex-wrap justify-between items-center shadow-md bg-white px-4 py-2 gap-4 !mx-[30]">
+            <nav className="navbar flex flex-wrap justify-between items-center bg-white px-4 py-2 gap-4 !mx-[30]">
                 {/* Logo */}
                 <NavLink to="/">
                     <img src={logo} alt="Logo" className="h-20 w-60" />
