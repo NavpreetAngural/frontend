@@ -75,7 +75,7 @@ const Navbar = () => {
                     <li className="py-2 md:py-0 text-lg"><NavLink to="/about" className="hover:text-blue-500">About Us</NavLink></li>
                     <li className="py-2 md:py-0 text-lg"><NavLink to="/contact" className="hover:text-blue-500">Contact Us</NavLink></li>
 
-                    <Button type="primary" onClick={showModal} className="mt-2 md:mt-0 text-lg">Login / Signup</Button>
+                    <Button type="primary" onClick={showModal} className="mt-2 md:mt-0 text-lg">Login </Button>
                 </ul>
             </nav>
 
