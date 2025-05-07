@@ -10,7 +10,7 @@ const HirerHome = () => {
     <div className="min-h-screen !px-8 !py-12 flex justify-center !mx-30">
       <div className="max-w-7xl w-full">
         {/* Welcome Banner */}
-        <div className="bg-white/70 backdrop-blur-md rounded-3xl !p-10 text-center shadow-xl !mb-16">
+        <div className="bg-white/70 backdrop-blur-md rounded-3xl !p-10 text-center  !mb-16">
           <h1 className="text-4xl font-bold text-gray-800 !mb-2">Welcome, {fullname} 👋</h1>
           <p className="text-xl text-gray-700">
             Role: <span className="text-blue-600 font-semibold">{role}</span>

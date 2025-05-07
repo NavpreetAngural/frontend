@@ -41,13 +41,14 @@ const Register = () => {
         console.log("Google Auth Response:", authResult);
         try {
             if (authResult.code) {
-                const res = await axios.post(`http://localhost:3000/api/auth/google?code=${authResult.code}`);
-                console.log("Response from backend:", res);
+                const res = await axios.get(`${baseURL}/auth/google?code=${authResult.code}`);
+                
                 const { email, name, image } = res.data.user;
-                const token = res.data.token;
-                const obj = { email, name, token, image };
-                localStorage.setItem("user-info", JSON.stringify(obj));
-                navigate("/AdminDashboard");
+                console.log("Response from backend:", res.data.user);
+                // const token = res.data.token;
+                // const obj = { email, name, token, image };
+                // localStorage.setItem("user-info", JSON.stringify(obj));
+                navigate("/");
             } else {
                 throw new Error("Google authentication failed");
             }

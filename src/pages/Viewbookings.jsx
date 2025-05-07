@@ -9,7 +9,6 @@ import {
   Select,
   DatePicker
 } from 'antd';
-import axios from 'axios';
 import axiosinstance from '../../axiosinstance';
 import { baseURL } from '../../config';
 import { MdDelete, MdEdit } from 'react-icons/md';
@@ -44,7 +43,7 @@ const Viewbookings = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${baseURL}/booking/delete/${id}`);
+      await axiosinstance.delete(`${baseURL}/booking/delete/${id}`);
       setBookings((prev) => prev.filter((item) => item._id !== id));
       toast.success('Booking deleted successfully');
     } catch (error) {
@@ -75,7 +74,7 @@ const Viewbookings = () => {
   const onFinish = async (values) => {
     try {
       if (editingUserId) {
-        await axios.put(`${baseURL}/booking/update/${editingUserId}`, values);
+        await axiosinstance.put(`${baseURL}/booking/update/${editingUserId}`, values);
         toast.success('Booking updated successfully');
       } else {
         const response = await axios.post(`${baseURL}/booking/add`, values);
@@ -262,7 +261,7 @@ const Viewbookings = () => {
         </Form>
       </Modal>
 
-      <Table columns={columns} dataSource={bookings} rowKey="_id" className='!mx-30'/>
+      <Table columns={columns} dataSource={bookings} rowKey="_id" className='!mx-30 !my-10'/>
     </>
   );
 };

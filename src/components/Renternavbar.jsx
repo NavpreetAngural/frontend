@@ -48,25 +48,27 @@ const Renternavbar = () => {
                     <li className="py-2 md:py-0 text-lg"><NavLink to="/renterdashboard/vehiclecategory" className="hover:text-blue-500">Vehicles</NavLink></li>
                     {/* <li className="py-2 md:py-0 text-lg"><NavLink to="/renterdashboard/managebooking" className="hover:text-blue-500">Manage Bookings</NavLink></li> */}
                     <li className="py-2 md:py-0 text-lg"><NavLink to="/renterdashboard/mybooking" className="hover:text-blue-500">My Bookings</NavLink></li>
-                    <div className="relative group inline-block p-4 rounded">
-                        <p className="text-lg font-medium">{fullname}</p>
+                    <div className="relative group inline-block p-4 rounded-lg cursor-pointer hover:bg-gray-100 transition duration-300 ease-in-out">
+                        {/* Display fullname with styling */}
+                        <li className="py-2 md:py-0 text-lg">
+                            <NavLink to="/renterdashboard/renterprofile" className="text-lg font-semibold text-gray-800 hover:text-blue-600 transition-all border-2 border-gray-300 hover:border-blue-500 rounded-lg !px-4 !py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg transform transition-all duration-300 group-hover:scale-105">
+                                {fullname}
+                            </NavLink>
+                        </li>
 
-                        {/* Profile Button */}
-                        <button
-                            onClick={handleProfileClick}
-                            className="absolute left-1/2 -translate-x-1/2 bottom-[-50px] px-4 py-2 !my-5 bg-blue-500 text-white rounded text-sm hidden group-hover:block"
-                        >
-                            View Profile
-                        </button>
-
-                        {/* Logout Button */}
-                        <button
-                            onClick={handleLogout}
-                            className="absolute left-1/2 -translate-x-1/2 bottom-[-100px] px-4 py-2 !my-10 bg-red-500 text-white rounded text-sm hidden group-hover:block"
-                        >
-                            Logout
-                        </button>
+                        {/* Dropdown menu shown on hover only */}
+                        <ul className="absolute left-1/2 -translate-x-1/2 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all ease-out duration-300 z-50">
+                            <li className="hover:bg-gray-50 transition duration-200">
+                                <button
+                                    onClick={handleLogout}
+                                    className="w-full px-6 py-3 text-sm text-red-600 font-medium rounded-b-lg hover:bg-blue-50"
+                                >
+                                    Logout
+                                </button>
+                            </li>
+                        </ul>
                     </div>
+
 
 
                     {/* <li className="py-2 md:py-0 text-lg"><NavLink to="/contact" className="hover:text-blue-500">Contact Us</NavLink></li> */}
