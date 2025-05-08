@@ -9,11 +9,11 @@ html {
 }
 
 .navbar {
-  @apply flex justify-between items-center    ;
+  @apply flex justify-between items-center   ;
 }
 
 #nav_page {
-  @apply w-full h-[50px] bg-[linear-gradient(to-bottom,white,rgb(180,215,228))] relative;
+  @apply w-full h-[30px] bg-[linear-gradient(to-bottom,white,rgb(180,215,228))] relative;
 }
 
 .nav-link {

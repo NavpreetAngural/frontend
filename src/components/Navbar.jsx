@@ -22,10 +22,10 @@ const Navbar = () => {
 
     return (
         <header id="head">
-            <nav aria-label="Main navigation" className="flex items-center justify-between w-full md:w-auto">
+            <nav aria-label="Main navigation" className="flex items-center justify-between w-full md:w-auto !px-5">
                 {/* Logo */}
                 <NavLink to="/">
-                    <img src={logo} alt="Logo" className="h-20 w-60 !ml-[30px]" />
+                    <img src={logo} alt="Logo" className="h-20 w-60" />
                 </NavLink>
 
                 {/* Search Bar */}
