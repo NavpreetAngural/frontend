@@ -31,9 +31,9 @@ const Navbar = () => {
 
                 {/* ✅ Search Bar */}
                 {/* Search - input for desktop, icon for mobile */}
-                <div className="flex-grow ">
+                <div className="flex-grow">
                     {/* Desktop: sleek AntD search bar */}
-                    <div className="hidden md:block !ml-[120px] ">
+                    <div className="hidden md:block !ml-[120px]">
                         <Input.Search
                             placeholder="Search vehicles..."
                             onSearch={(value) => console.log('Search:', value)}
@@ -43,10 +43,8 @@ const Navbar = () => {
                             className="w-full max-w-md rounded-xl shadow-md focus:shadow-lg transition duration-300"
                         />
                     </div>
-
-                    {/* Mobile: search icon only */}
-                    
                 </div>
+
 
 
 
