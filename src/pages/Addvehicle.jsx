@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../index.css";
 import { baseURL } from '../../config';
+import Hirerfooter from '../components/Hirerfooter';
 
 const { Option } = Select;
 
@@ -199,6 +200,7 @@ const Addvehicle = () => {
                     </Form.Item>
                 </Form>
             </div>
+            {role == 'hirer'  ? "" : <Hirerfooter /> }
         </>
     );
 };

@@ -63,7 +63,7 @@ ReactDOM.createRoot(root).render(
             <Route path="addvehicle" element={<Addvehicle />} />
             {/* <Route path="vehicle/:type" element={<Vehicletype />} /> */}
             {/* <Route path="addbooking" element={<Addbooking />} /> */}
-            <Route path="viewbooking" element={<Viewbookings />} />
+            <Route path="viewbookings" element={<Viewbookings />} />
             <Route path="managevehicle" element={<Managevehicles />} />
             <Route path="hirerprofile" element={<Hirerprofile />} />
           </Route>

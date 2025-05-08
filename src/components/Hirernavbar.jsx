@@ -74,7 +74,7 @@ const Hirernavbar = () => {
             </NavLink>
           </li>
           <li className="!py-2 md:!py-0 text-lg">
-            <NavLink to="/hirerdashboard/viewbooking" className="nav-link" onClick={handleLinkClick}>
+            <NavLink to="/hirerdashboard/viewbookings" className="nav-link" onClick={handleLinkClick}>
               View Bookings
             </NavLink>
           </li>

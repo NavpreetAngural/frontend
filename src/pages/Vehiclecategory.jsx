@@ -7,6 +7,7 @@ import car1 from "../assets/images/car1.jpg";
 import suv1 from "../assets/images/suv1.avif";
 import modified from "../assets/images/modified.jpg";
 import { useNavigate } from 'react-router';
+import Renterfooter from '../components/Renterfooter';
 
 const { Title } = Typography;
 const { Meta } = Card;
@@ -62,7 +63,7 @@ const Vehiclecategory = () => {
           ))}
         </Row>
       </div>
-      <Footer />
+      {role == 'renter'  ? "" : <Renterfooter /> }
     </>
   );
 };

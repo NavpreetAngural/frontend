@@ -155,12 +155,18 @@ const Mybookings = () => {
 
   return (
     <>
-      <div className="flex items-center mb-4 !mx-30'">
-        <Title className='text-center !ml-160 !my-10'>MyBookings</Title>
-        <Button type="primary" className='!ml-100' onClick={showModal}>
-          Add Booking
-        </Button>
-      </div>
+      <Row justify="center" align="middle" style={{ margin: "1rem 0" }} gutter={[16, 16]}>
+              <Col xs={24} sm={16} style={{ textAlign: 'center' }}>
+                <Title level={4} style={{ marginBottom: 0 }}>
+                  My Bookings
+                </Title>
+              </Col>
+              <Col xs={24} sm={8} style={{ textAlign: 'center' }}>
+                <Button type='primary' onClick={showModal}>
+                  Add Booking
+                </Button>
+              </Col>
+            </Row>
 
       <Modal
         title={editingUserId ? 'Edit Booking' : 'Add Booking'}

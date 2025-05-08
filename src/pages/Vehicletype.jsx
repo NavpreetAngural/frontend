@@ -4,6 +4,7 @@ import axios from 'axios';
 import { baseURL } from '../../config';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Renterfooter from '../components/Renterfooter';
 
 const Vehicletype = () => {
   const { type } = useParams(); // car, bike, etc.
@@ -45,7 +46,7 @@ const Vehicletype = () => {
         ))}
       </div>
     </div>
-    <Footer/>
+    {role == 'renter'  ? "" : <Renterfooter /> }
   </>
   );
 };

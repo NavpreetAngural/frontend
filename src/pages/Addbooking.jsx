@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../index.css";
 import { baseURL } from '../../config';
+import Renterfooter from '../components/Renterfooter';
 
 const { Option } = Select;
 
@@ -151,7 +152,7 @@ const Addbooking = () => {
                     </Form.Item>
                 </Form>
             </div>
-            <Footer/>
+            {role == 'renter'  ? "" : <Renterfooter /> }
         </div>
     );
 };

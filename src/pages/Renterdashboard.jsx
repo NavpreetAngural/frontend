@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import Footer from '../components/Footer';
 import { Outlet, useNavigate } from 'react-router';
 import Renternavbar from '../components/Renternavbar';
+import Renterfooter from '../components/Renterfooter';
 
 const Renterdashboard = () => {
   const role = localStorage.getItem('role');
@@ -19,7 +19,7 @@ const Renterdashboard = () => {
     <>
       <Renternavbar />
       <Outlet />
-      <Footer />
+      <Renterfooter />
     </>
   );
 };

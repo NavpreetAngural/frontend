@@ -180,8 +180,8 @@ const Viewvehicles = () => {
 
     return (
         <>
-            <div className='flex items-center justify-between mb-4'>
-                <Title level={4}>Users</Title>
+      <div className='flex items-center justify-between mb-4'>
+      <Title level={4}>Users</Title>
                 <Button type='primary' onClick={showModal}>Add Vehicle</Button>
             </div>
             <center>
