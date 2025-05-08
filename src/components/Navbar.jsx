@@ -42,7 +42,7 @@ const Navbar = () => {
 
                 {/* Hamburger Button */}
                 <button
-                    className="md:hidden text-2xl p-2 focus:outline-none"
+                    className="md:hidden text-2xl !mt-[-4px] focus:outline-none"
                     onClick={toggleMenu}
                     aria-label="Toggle navigation menu"
                     aria-expanded={isMenuOpen}
