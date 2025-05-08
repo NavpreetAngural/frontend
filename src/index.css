@@ -9,7 +9,7 @@ html {
 }
 
 .navbar {
-  @apply flex justify-between items-center !mx-30   ;
+  @apply flex justify-between items-center    ;
 }
 
 #nav_page {

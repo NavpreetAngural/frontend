@@ -8,7 +8,7 @@ const About = () => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-wrap justify-evenly !px-4 md:!px-20 !py-6 gap-y-6">
+      <div className="flex flex-wrap justify-evenly  !py-6 gap-y-6">
         {/* Left Column */}
         <div className="w-full md:w-[48%] flex flex-col gap-5">
           <div className="bg-white rounded-lg !p-6 h-[200px] text-center">
@@ -45,11 +45,11 @@ const About = () => {
         </div>
 
         {/* Meet the Team */}
-        <div className="w-full flex flex-col items-center !py-4">
+        <div className="w-[100%] flex flex-col items-center !py-4">
           <h1 className="text-xl font-bold !mb-4">Meet the Team</h1>
-          <div className="flex flex-wrap justify-center gap-16">
+          <div className="flex flex-wrap justify-around gap-16">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="divss w-60">
+              <div key={i} className="divss w-[100%]">
                 <img src={men_1} alt="team member" className="w-full !h-auto" />
                 <div className="text-center">
                   <h3 className="font-bold text-lg">John</h3>

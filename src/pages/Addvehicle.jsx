@@ -53,7 +53,7 @@ const Addvehicle = () => {
     return (
         <>
             {role == 'hirer'  ? "" : <Navbar /> }
-            <div style={{ display: "flex", justifyContent: "center", padding: "20px" }}className=' !mx-30'>
+            <div style={{ display: "flex", justifyContent: "center", padding: "20px" }}>
                 <Form
                     layout="vertical"
                     onFinish={onFinish}

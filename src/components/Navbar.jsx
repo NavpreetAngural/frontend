@@ -23,7 +23,7 @@ const Navbar = () => {
 
     return (
         <header id="head">
-            <nav className="navbar flex flex-wrap justify-between items-center bg-white px-4 py-2 gap-4 !mx-[30]">
+            <nav className="navbar flex flex-wrap justify-between items-center bg-white px-4 py-2 gap-4 ">
                 {/* Logo */}
                 <NavLink to="/">
                     <img src={logo} alt="Logo" className="h-20 w-60" />
@@ -31,9 +31,9 @@ const Navbar = () => {
 
                 {/* ✅ Search Bar */}
                 {/* Search - input for desktop, icon for mobile */}
-                <div className="flex-grow">
+                <div className="flex-grow ">
                     {/* Desktop: sleek AntD search bar */}
-                    <div className="hidden md:block ">
+                    <div className="hidden md:block !ml-[120px] ">
                         <Input.Search
                             placeholder="Search vehicles..."
                             onSearch={(value) => console.log('Search:', value)}

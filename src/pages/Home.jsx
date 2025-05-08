@@ -53,7 +53,7 @@ const Home = () => {
 
         <>
             <Navbar />
-            <div className=" !mx-30 ">
+            <div >
                 <main >
                     <one-section >
                         <div className="w-full mx-0 px-0 flex flex-col items-center justify-center">

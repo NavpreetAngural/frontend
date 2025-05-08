@@ -29,7 +29,7 @@ const Vehiclecategory = () => {
     <>
     {role == 'renter'  ? "" : <Navbar /> }
       
-      <div style={{ padding: '20px' }} className=' !mx-30'>
+      <div style={{ padding: '20px' }} >
         <Title level={3} style={{ textAlign: 'center', marginBottom: '30px' }}>
           Choose Vehicle Category
         </Title>

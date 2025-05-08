@@ -268,7 +268,7 @@ const Mybookings = () => {
         </Form>
       </Modal>
 
-      <Row gutter={[16, 16]} className='!mx-[30]'>
+      <Row gutter={[16, 16]} >
         {bookings.map((booking) => (
           <Col xs={24} sm={12} md={8} lg={8} key={booking._id}>
             <Card
