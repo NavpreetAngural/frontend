@@ -53,15 +53,15 @@ const Viewbookings = () => {
 
   const handleEdit = (booking) => {
     setIsModalOpen(true);
-  setEditingUserId(booking._id);
-  setIsModifiedVehicle(booking.vehicleType === 'Modified Vehicle');
-  form.setFieldsValue(booking);
+    setEditingUserId(booking._id);
+    setIsModifiedVehicle(booking.vehicleType === 'Modified Vehicle');
+    form.setFieldsValue(booking);
 
-  form.setFieldsValue({
-    ...booking,
-    pickupDate: booking.pickupDate ? dayjs(booking.pickupDate) : null,
-    dropDate: booking.dropDate ? dayjs(booking.dropDate) : null
-  });
+    form.setFieldsValue({
+      ...booking,
+      pickupDate: booking.pickupDate ? dayjs(booking.pickupDate) : null,
+      dropDate: booking.dropDate ? dayjs(booking.dropDate) : null
+    });
   };
 
   const showModal = () => {
@@ -153,7 +153,7 @@ const Viewbookings = () => {
 
   return (
     <>
-      
+
 
       <Modal
         title={editingUserId ? 'Edit Booking' : 'Add Booking'}
@@ -261,7 +261,15 @@ const Viewbookings = () => {
         </Form>
       </Modal>
 
-      <Table columns={columns} dataSource={bookings} rowKey="_id" className='!my-10'/>
+      <div className="overflow-x-auto">
+        <Table
+          columns={columns}
+          dataSource={bookings}
+          rowKey="_id"
+          className="!my-10"
+          scroll={{ x: "1000px" }} // Enables horizontal scroll on small screens
+        />
+      </div>
     </>
   );
 };

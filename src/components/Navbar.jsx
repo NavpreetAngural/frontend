@@ -25,7 +25,7 @@ const Navbar = () => {
             <nav aria-label="Main navigation" className="flex items-center justify-between w-full md:w-auto">
                 {/* Logo */}
                 <NavLink to="/">
-                    <img src={logo} alt="Logo" className="h-20 w-60" />
+                    <img src={logo} alt="Logo" className="h-20 w-60 !ml-[30px]" />
                 </NavLink>
 
                 {/* Search Bar */}
@@ -53,13 +53,13 @@ const Navbar = () => {
                 {/* Overlay */}
                 {isMenuOpen && (
                     <div
-                        className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-30 z-40"
+                        className="fixed top-0 left-0 w-full h-full  bg-opacity-30 z-40"
                         onClick={toggleMenu}
                     ></div>
                 )}
 
                 {/* Navigation Links */}
-                <ul className={`fixed md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none flex flex-col md:flex-row gap-4 md:gap-10 items-center transition-all duration-300 ease-in-out z-50 ${isMenuOpen ? 'block' : 'hidden'} md:flex`}>
+                <ul className={`fixed md:static top-20 left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none flex flex-col md:flex-row gap-4 md:gap-10 items-center transition-all duration-300 ease-in-out z-50 ${isMenuOpen ? 'block' : 'hidden'} md:flex`}>
                     <li className="py-2 md:py-0 text-lg"><NavLink to="/" className="hover:text-blue-500">Home</NavLink></li>
                     <li className="py-2 md:py-0 text-lg"><NavLink to="/vehiclecategory" className="hover:text-blue-500">Vehicles</NavLink></li>
                     <li className="py-2 md:py-0 text-lg"><NavLink to="/about" className="hover:text-blue-500">About Us</NavLink></li>
