@@ -45,12 +45,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Mobile: search icon only */}
-                    <div
-                        className="block md:hidden text-2xl text-gray-700 cursor-pointer hover:text-blue-600 !ml-4"
-                        onClick={() => console.log('Mobile search icon clicked')}
-                    >
-                        🔍
-                    </div>
+                    
                 </div>
 
 

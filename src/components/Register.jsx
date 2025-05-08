@@ -37,36 +37,31 @@ const Register = () => {
             });
 
     };
-    const handleSuccess = async (authResult) => {
-        console.log("Google Auth Success:", authResult);
+    const responseGoogle = async (authResult) => {
+        console.log("Google Auth Response:", authResult);
         try {
             if (authResult.code) {
                 const res = await axios.post(`${baseURL}/auth/google?code=${authResult.code}`);
+                console.log("Response from backend:", res);
                 const { email, name, image } = res.data.user;
-                console.log("Response from backend:", res.data.user);
                 const token = res.data.token;
                 const obj = { email, name, token, image };
                 localStorage.setItem("user-info", JSON.stringify(obj));
-                navigate("/");
+                navigate("/AdminDashboard");
             } else {
-                throw new Error("Missing authorization code");
+                throw new Error("Google authentication failed");
             }
         } catch (e) {
-            console.error("Error during Google login:", e);
+            console.log("Error while Google Login...", e);
         }
     };
 
-    const handleError = (error) => {
-        console.error("Google Login Error:", error);
-    };
-
-
-
     const googleLogin = useGoogleLogin({
-        onSuccess: handleSuccess,
-        onError: handleError,
+        onSuccess: responseGoogle,
+        onError: responseGoogle,
         flow: "auth-code",
     });
+
 
     return (
 
