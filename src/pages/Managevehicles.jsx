@@ -119,7 +119,7 @@ const Managevehicles = () => {
       key: 'vehicleImage',
       render: (vehicleImage) => (
         <img
-          src={`http://localhost:3000/uploads/${vehicleImage}`}
+          src={`${baseURL}/uploads/${vehicleImage}`}
           alt="Vehicle"
           style={{ width: '100px', height: '60px', objectFit: 'cover', borderRadius: '8px' }}
         />
